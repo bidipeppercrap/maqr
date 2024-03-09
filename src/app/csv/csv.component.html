@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="text-center">Csv to QR-Code</h1>
+    <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <label for="logoUrlInput" class="form-label">Logo URL</label>
+                        <input [value]="logoUrl()" (change)="logoUrlChange($event)" id="logoUrlInput" type="text" class="form-control">
+                    </div>
+                    <div class="mt-2">
+                        <label for="csvFileInput" class="form-label">Csv File</label>
+                        <input (change)="onFileSelected($event)" type="file" id="csvFileInput" class="form-control">
+                    </div>
+                    <div class="form-check form-switch mt-2">
+                        <input type="checkbox" id="cutLineOnlyToggle" class="form-check-input">
+                        <label for="cutLineOnlyToggle" class="form-label-input">Cut Line</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5">
+        <sticker-list [logoUrl]="logoUrl()" [products]="products()" />
+    </div>
+</div>

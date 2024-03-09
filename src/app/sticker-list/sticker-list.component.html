@@ -1,0 +1,14 @@
+<div class="row">
+    @for (product of products; track product.code) {
+        <div class="col-auto">
+            <sticker [sticker]="{
+                logoUrl: logoUrl,
+                product: product
+            }" />
+        </div>
+    } @empty {
+        <div class="col">
+            <h1 class="text-center">No data can be read</h1>
+        </div>
+    }
+</div>
