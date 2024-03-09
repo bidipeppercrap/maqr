@@ -1,10 +1,13 @@
 <div class="row">
     @for (product of products; track product.code) {
         <div class="col-auto">
-            <sticker [sticker]="{
-                logoUrl: logoUrl,
-                product: product
-            }" />
+            <sticker
+                [sticker]="{
+                    logoUrl: logoUrl,
+                    product: product
+                }"
+                [cutlineToggle]="cutlineToggle"
+            />
         </div>
     } @empty {
         <div class="col">

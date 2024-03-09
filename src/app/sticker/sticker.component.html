@@ -1,4 +1,14 @@
-<div>
-    @if (sticker.logoUrl) { <img src={{sticker.logoUrl}} alt="logo"> }
-    @if (sticker.product.name) { <div>{{sticker.product.name}}</div> }
+<div
+    [ngClass]="['sticker-cutline', cutlineToggle ? '' : 'hidden']"
+    [ngStyle]="{
+        'border-radius.px': borderRadius,
+        'padding.px': stickerPadding,
+        'width.px': stickerWidth,
+        'height.px': stickerHeight
+    }"
+>
+    @if (contentToggle) {
+        @if (sticker.logoUrl) { <img src={{sticker.logoUrl}} alt="logo"> }
+        @if (sticker.product.name && nameToggle) { <div [ngStyle]="{'font-size.px': nameSize}">{{sticker.product.name}}</div> }
+    }
 </div>

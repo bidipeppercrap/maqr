@@ -11,9 +11,40 @@ import { Product } from '../../models/product';
   styleUrl: './csv.component.css'
 })
 export class CsvComponent {
-  logoUrl = signal("test");
-
+  logoUrl = signal("");
+  borderRadius = signal(9);
+  stickerPadding = signal(15);
+  codeSize = signal(150);
+  nameSize = signal(21);
+  cutlineToggle = signal(true);
+  contentToggle = signal(true);
+  nameToggle = signal(true);
   products = signal<Product[]>([]);
+
+  logoUrlChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.logoUrl.set(value);
+  }
+  onBorderRadiusChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.borderRadius.set(parseInt(value) || 9);
+  }
+  onStickerPaddingChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.stickerPadding.set(parseInt(value) || 15);
+  }
+  onCodeSizeChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.codeSize.set(parseInt(value) || 150);
+  }
+  onNameSizeChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.nameSize.set(parseInt(value) || 21);
+  }
+
+  onCutlineToggle() { this.cutlineToggle.set(!this.cutlineToggle()) }
+  onContentToggle() { this.contentToggle.set(!this.contentToggle()) }
+  onNameToggle() { this.nameToggle.set(!this.nameToggle()) }
 
   onFileSelected(event: Event) {
     const fileInput = event.target as HTMLInputElement;
@@ -41,10 +72,5 @@ export class CsvComponent {
     });
 
     this.products.set(csvData);
-  }
-
-  logoUrlChange(event: Event) {
-    const { value } = event.target as HTMLInputElement;
-    this.logoUrl.set(value);
   }
 }

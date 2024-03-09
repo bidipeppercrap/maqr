@@ -8,13 +8,49 @@
                         <label for="logoUrlInput" class="form-label">Logo URL</label>
                         <input [value]="logoUrl()" (change)="logoUrlChange($event)" id="logoUrlInput" type="text" class="form-control">
                     </div>
-                    <div class="mt-2">
-                        <label for="csvFileInput" class="form-label">Csv File</label>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for="borderRadiusInput" class="form-label">Border Radius</label>
+                            <input [value]="borderRadius()" (change)="onBorderRadiusChange($event)" id="borderRadiusInput" type="number" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="stickerPaddingInput" class="form-label">Sticker Padding</label>
+                            <input [value]="stickerPadding()" (change)="onStickerPaddingChange($event)" id="stickerPaddingInput" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for="codeSizeInput" class="form-label">QR-Code Size</label>
+                            <input [value]="codeSize()" (change)="onCodeSizeChange($event)" id="codeSizeInput" type="number" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="nameSizeInput" class="form-label">Name Size</label>
+                            <input [value]="nameSize()" (change)="onNameSizeChange($event)" id="nameSizeInput" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="csvFileInput" class="form-label">Csv File = {{'{ name, code }'}}</label>
                         <input (change)="onFileSelected($event)" type="file" id="csvFileInput" class="form-control">
                     </div>
-                    <div class="form-check form-switch mt-2">
-                        <input type="checkbox" id="cutLineOnlyToggle" class="form-check-input">
-                        <label for="cutLineOnlyToggle" class="form-label-input">Cut Line</label>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <input (change)="onCutlineToggle()" type="checkbox" id="cutLineOnlyToggle" class="form-check-input" [checked]="cutlineToggle()">
+                                <label for="cutLineOnlyToggle" class="form-label-input">Cut Line</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <input (change)="onContentToggle()" type="checkbox" id="contentToggle" class="form-check-input" [checked]="contentToggle()">
+                                <label for="contentToggle" class="form-label-input">Show Content</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <input (change)="onNameToggle()" type="checkbox" id="nameToggle" class="form-check-input" [checked]="nameToggle()">
+                                <label for="nameToggle" class="form-label-input">Show Name</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -22,6 +58,10 @@
     </div>
     
     <div class="mt-5">
-        <sticker-list [logoUrl]="logoUrl()" [products]="products()" />
+        <sticker-list
+            [logoUrl]="logoUrl()"
+            [cutlineToggle]="cutlineToggle()"
+            [products]="products()"
+        />
     </div>
 </div>

@@ -1,0 +1,13 @@
+.sticker-cutline {
+    border-width: 1px;
+    border-color: grey;
+    border-style: dashed;
+}
+
+.sticker-cutline.hidden {
+    border-color: transparent;
+}
+
+.sticker-content-hidden {
+    visibility: hidden;
+}
