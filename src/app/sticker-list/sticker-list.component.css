@@ -1,0 +1,5 @@
+.sticker-list {
+    display: flex;
+    gap: 3mm;
+    flex-wrap: wrap;
+}

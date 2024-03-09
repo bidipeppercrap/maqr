@@ -1,26 +1,24 @@
-<div class="row">
+<div class="sticker-list">
     @for (product of products; track product.code) {
-        <div class="col-auto">
-            <sticker
-                [sticker]="{
-                    logoUrl: logoUrl,
-                    product: product
-                }"
-                [borderRadius]="borderRadius"
-                [stickerHeight]="stickerHeight"
-                [stickerWidth]="stickerWidth"
-                [stickerPadding]="stickerPadding"
-                [logoHeight]="logoHeight"
-                [logoWidth]="logoWidth"
-                [codeSize]="codeSize"
-                [nameSize]="nameSize"
-                [cutlineToggle]="cutlineToggle"
-                [contentToggle]="contentToggle"
-                [nameToggle]="nameToggle"
-            />
-        </div>
+        <sticker
+            [sticker]="{
+                logoUrl: logoUrl,
+                product: product
+            }"
+            [borderRadius]="borderRadius"
+            [stickerHeight]="stickerHeight"
+            [stickerWidth]="stickerWidth"
+            [stickerPadding]="stickerPadding"
+            [logoHeight]="logoHeight"
+            [logoWidth]="logoWidth"
+            [codeSize]="codeSize"
+            [nameSize]="nameSize"
+            [cutlineToggle]="cutlineToggle"
+            [contentToggle]="contentToggle"
+            [nameToggle]="nameToggle"
+        />
     } @empty {
-        <div class="col">
+        <div class="col mb-5">
             <h1 class="text-center">No data can be read</h1>
         </div>
     }

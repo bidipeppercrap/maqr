@@ -12,10 +12,10 @@ import { Product } from '../../models/product';
 })
 export class CsvComponent {
   logoUrl = signal("");
-  borderRadius = signal(9);
+  borderRadius = signal(15);
   stickerPadding = signal(15);
-  stickerHeight = signal(300);
-  stickerWidth = signal(300);
+  stickerHeight = signal(60);
+  stickerWidth = signal(60);
   logoHeight = signal(0);
   logoWidth = signal(150);
   codeSize = signal(150);

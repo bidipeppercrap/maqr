@@ -3,16 +3,16 @@
     [ngStyle]="{
         'border-radius.px': borderRadius,
         'padding.px': stickerPadding,
-        'width.px': stickerWidth,
-        'height.px': stickerHeight
+        'width.mm': stickerWidth,
+        'height.mm': stickerHeight
     }"
 >
     @if (contentToggle) {
         <div class="sticker-content-logo">
             @if (sticker.logoUrl) {
                 <img
-                    [height]="logoHeight || 'auto'"
-                    [width]="logoWidth || 'auto'"
+                    [height]="logoHeight === 0 ? 'auto' : logoHeight"
+                    [width]="logoWidth === 0 ? 'auto' : logoWidth"
                     src={{sticker.logoUrl}} alt="logo"
                 >
             }
