@@ -8,6 +8,26 @@
     border-color: transparent;
 }
 
-.sticker-content-hidden {
-    visibility: hidden;
+.sticker-content {
+    display: grid;
+    grid-template-areas:
+        "l"
+        "c"
+        "n";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.sticker-content-logo {
+    grid-area: l;
+}
+
+.sticker-content-code {
+    grid-area: c;
+}
+
+.sticker-content-name {
+    grid-area: n;
+    text-align: center;
 }
