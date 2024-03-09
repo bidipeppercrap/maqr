@@ -9,10 +9,16 @@
 >
     @if (contentToggle) {
         <div class="sticker-content-logo">
-            @if (sticker.logoUrl) { <img src={{sticker.logoUrl}} alt="logo"> }
+            @if (sticker.logoUrl) {
+                <img
+                    [height]="logoHeight || 'auto'"
+                    [width]="logoWidth || 'auto'"
+                    src={{sticker.logoUrl}} alt="logo"
+                >
+            }
         </div>
         <div class="sticker-content-code">
-
+            <qrcode [qrdata]="sticker.product.code" [width]="codeSize || 150" [errorCorrectionLevel]="'M'" />
         </div>
         <div class="sticker-content-name">
             @if (sticker.product.name && nameToggle) { <div [ngStyle]="{'font-size.px': nameSize}">{{sticker.product.name}}</div> }

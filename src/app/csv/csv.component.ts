@@ -14,6 +14,10 @@ export class CsvComponent {
   logoUrl = signal("");
   borderRadius = signal(9);
   stickerPadding = signal(15);
+  stickerHeight = signal(300);
+  stickerWidth = signal(300);
+  logoHeight = signal(0);
+  logoWidth = signal(150);
   codeSize = signal(150);
   nameSize = signal(21);
   cutlineToggle = signal(true);
@@ -32,6 +36,22 @@ export class CsvComponent {
   onStickerPaddingChange(event: Event) {
     const { value } = event.target as HTMLInputElement;
     this.stickerPadding.set(parseInt(value) || 15);
+  }
+  onStickerHeightChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.stickerHeight.set(parseInt(value) || 300);
+  }
+  onStickerWidthChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.stickerWidth.set(parseInt(value) || 300);
+  }
+  onLogoHeightChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.logoHeight.set(parseInt(value) || 0);
+  }
+  onLogoWidthChange(event: Event) {
+    const { value } = event.target as HTMLInputElement;
+    this.logoWidth.set(parseInt(value) || 150);
   }
   onCodeSizeChange(event: Event) {
     const { value } = event.target as HTMLInputElement;

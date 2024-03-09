@@ -10,12 +10,32 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                            <label for="logoHeightInput" class="form-label">Logo Height (0 for auto)</label>
+                            <input [value]="logoHeight()" (change)="onLogoHeightChange($event)" id="logoHeightInput" type="number" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="logoWidthInput" class="form-label">Logo Width (0 for auto)</label>
+                            <input [value]="logoWidth()" (change)="onLogoWidthChange($event)" id="logoWidthInput" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
                             <label for="borderRadiusInput" class="form-label">Border Radius</label>
                             <input [value]="borderRadius()" (change)="onBorderRadiusChange($event)" id="borderRadiusInput" type="number" class="form-control">
                         </div>
                         <div class="col">
                             <label for="stickerPaddingInput" class="form-label">Sticker Padding</label>
                             <input [value]="stickerPadding()" (change)="onStickerPaddingChange($event)" id="stickerPaddingInput" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for="stickerHeightInput" class="form-label">Sticker Height</label>
+                            <input [value]="stickerHeight()" (change)="onStickerHeightChange($event)" id="stickerHeightInput" type="number" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="stickerWidthInput" class="form-label">Sticker Width</label>
+                            <input [value]="stickerWidth()" (change)="onStickerWidthChange($event)" id="stickerWidthInput" type="number" class="form-control">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -60,7 +80,17 @@
     <div class="mt-5">
         <sticker-list
             [logoUrl]="logoUrl()"
+            [borderRadius]="borderRadius()"
+            [stickerHeight]="stickerHeight()"
+            [stickerWidth]="stickerWidth()"
+            [stickerPadding]="stickerPadding()"
+            [logoHeight]="logoHeight()"
+            [logoWidth]="logoWidth()"
+            [codeSize]="codeSize()"
+            [nameSize]="nameSize()"
             [cutlineToggle]="cutlineToggle()"
+            [contentToggle]="contentToggle()"
+            [nameToggle]="nameToggle()"
             [products]="products()"
         />
     </div>
