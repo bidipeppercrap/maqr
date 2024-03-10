@@ -1,7 +1,7 @@
 .sticker-cutline {
     border-width: 3px;
     border-color: grey;
-    border-style: dashed;
+    border-style: solid;
 }
 
 .sticker-cutline.hidden {

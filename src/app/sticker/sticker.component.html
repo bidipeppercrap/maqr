@@ -11,8 +11,8 @@
         <div class="sticker-content-logo">
             @if (sticker.logoUrl) {
                 <img
-                    [height]="logoHeight === 0 ? 'auto' : logoHeight"
-                    [width]="logoWidth === 0 ? 'auto' : logoWidth"
+                    height="auto"
+                    [width]="logoWidth"
                     src={{sticker.logoUrl}} alt="logo"
                 >
             }

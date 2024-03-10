@@ -24,6 +24,8 @@ export class StickerComponent {
   @Input() stickerPadding? = 15;
   @Input() logoHeight? = 0;
   @Input() logoWidth? = 150;
+  @Input() toggleLogoHeight? = false;
+  @Input() toggleLogoWidth? = true;
   @Input() codeSize? = 150;
   @Input() nameSize? = 21;
   @Input() cutlineToggle? = true;
